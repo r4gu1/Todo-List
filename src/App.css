@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+/* Main Background Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/10079.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Title Styling with Transparency */
+.title {
+    font-family: 'Arial', sans-serif;
+    color: #121212; /* White text with 80% opacity */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    animation: fadeIn 1.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent background behind text */
+    padding: 10px;
+    border-radius: 8px;
+    visibility: hidden;
+    display: inline-block;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Input and Button Styling */
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.todo-input {
+    padding: 10px;
+    width: 300px;
+    font-size: 1rem;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    outline: none;
+    background-color: rgba(51, 51, 51, 0.7); /* Dark input background with transparency */
+    color: rgba(255, 255, 255, 0.8); /* White text with opacity */
+    transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-input:focus {
+    border-color: #388E3C;
+    box-shadow: 0 0 8px rgba(56, 142, 60, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+}
+
+/* Todo List and Item Styling */
+.todo-list {
+    list-style: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.todo-item {
+    background-color: rgba(51, 51, 51, 0.8); /* Dark item background with transparency */
+    color: rgba(255, 255, 255, 0.8); /* White text with opacity */
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    border-left: 4px solid #4CAF50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    animation: fadeIn 0.5s ease;
+    transition: transform 0.3s ease;
+}
+
+.todo-item:hover {
+    transform: translateX(10px);
+}
+
+/* Delete Button Styling */
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
